@@ -29,6 +29,36 @@ A RESTful API service for tracking pets with H2 database integration.
 | GET    | `/petType/{petType}`  | Filter by type (CAT/DOG)   |
 | GET    | `/statics`            | Get pets outside zone      |
 
+## Curl Example
+### 1. Create a Pet Tracker (POST)
+   ```bash
+        curl --location 'http://localhost:8080/api/v1/pets/trackers' \
+        --header 'Content-Type: application/json' \
+        --data '{
+            "ownerId": 1,
+            "petType": "CAT",
+            "trackerType": "BIG",
+            "inZone": false,
+            "lostTracker": false
+        }'
+  ```
+### 2. Get All Pets (GET)
+   ```bash
+      curl --location 'http://localhost:8080/api/v1/pets/trackers'
+  ```
+### 3. Get Pet by ID (GET)
+   ```bash
+      curl --location 'http://localhost:8080/api/v1/pets/trackers/1'
+  ```
+### 4. Get Pets by Type (GET)
+   ```bash
+      curl --location 'http://localhost:8080/api/v1/pets/trackers/petType/DOG'
+  ```
+
+### 5. Get Pets Outside Zone (GET)
+   ```bash
+      curl --location 'http://localhost:8080/api/v1/pets/trackers/statics'
+  ```
 ## Prerequisites
 
 - Docker 20.10+
