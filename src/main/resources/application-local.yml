@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:pet_trackers
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: test1373
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      settings:
+        web-allow-others: true
+      enabled: true
+      path: /h2-console
+  jackson:
+    mapper:
+      allow-coercion-of-scalars: true
+    deserialization:
+      READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE: true
+
+#Logging
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+#Swagger
+springdoc:
+  api-docs:
+    groups:
+      enabled: true
+    path: /api/v1/pet/trackers/v3/api/docs
+  swagger-ui:
+    disable-swagger-default-url: true
+    enabled: true
+    path: /api/v1/pet/trackers/swagger-ui

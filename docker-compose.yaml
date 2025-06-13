@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=sit
+      - SPRING_DATASOURCE_URL=jdbc:h2:mem:pet_trackers
+      - SPRING_H2_CONSOLE_ENABLED=true
+      - SPRING_H2_CONSOLE_SETTINGS_WEB-ALLOW-OTHERS=true
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=test1373
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+  coverage:
+    image: nginx:alpine
+    ports:
+      - "8081:80"
+    volumes:
+      - ./target/site/jacoco:/usr/share/nginx/html
+    restart: unless-stopped

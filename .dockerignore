@@ -1,0 +1,66 @@
+### Build artifacts ###
+target/
+build/
+*.jar
+*.war
+*.ear
+
+### IDE files ###
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+bin/
+
+### Version control ###
+.git/
+.gitignore
+.gitmodules
+
+### Dependency caches ###
+.m2/
+.gradle/
+**/gradle/
+**/gradlew
+**/gradlew.bat
+
+### Environment files ###
+.env
+*.env
+**/.env*
+**/*.env*
+
+### Logs and temp files ###
+*.log
+logs/
+tmp/
+temp/
+
+### Documentation ###
+**/*.md
+**/LICENSE
+**/docs/
+
+### Test files ###
+**/*.test
+**/test/
+**/tests/
+
+### System files ###
+.DS_Store
+Thumbs.db
+
+### Spring Boot specific ###
+application.properties
+application.yml
+**/application-*.yml
+**/application-*.properties
+
+### Docker files ###
+!Dockerfile
+docker-compose*.yml
+**/docker-compose*
