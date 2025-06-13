@@ -38,4 +38,4 @@ springdoc:
   swagger-ui:
     disable-swagger-default-url: true
     enabled: true
-    path: /api/v1/pet/trackers/swagger-ui
+    path: /api/v1/pet/tracker/swagger-ui

@@ -102,7 +102,7 @@ A RESTful API service for tracking pets with H2 database integration.
       http://localhost:8080/actuator/metrics
     - **Swagger UI**:
       ```bash
-      http://localhost:8080/api/v1/pet/trackers/swagger-ui/index.html
+      http://localhost:8080/api/v1/pet/tracker/swagger-ui/index.html
   
 ## Project Structure
 
